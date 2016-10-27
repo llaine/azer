@@ -1,0 +1,19 @@
+%p
+  %b Title:
+  = @channel.title
+
+#messages{'data-channel-room-id':"#{@channel.id}"}
+  %ul
+    - @channel.messages.each do |message|
+      %li
+        = render 'messages/message', message: message
+
+
+= form_for @message, url: '#' do |f|
+  = f.label :body
+  = f.text_area :body, class: 'form-control'
+  = f.submit "Post"
+
+= link_to 'Edit', edit_channel_path(@channel)
+\|
+= link_to 'Back', channels_path
