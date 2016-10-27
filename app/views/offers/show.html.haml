@@ -1,15 +1,18 @@
 #{link_to 'Back', offers_path}
 
+
+- if @offer.users.include? current_user
+  = link_to 'Leave this crew', leave_offer_path, method: :post, data: { confirm: 'This action wil blablabla' }
+- else
+  = link_to 'Join this crew', join_offer_path, method: :post, data: { confirm: 'This action wil blablabla' }
+
 %h3 Crew
 
 - @offer.users.each do |user|
   %p
     - if user.images.present?
       %span= image_tag user.images.first.file.url(:thumb)
-
-    %span= user.first_name
-    %span= user.last_name
-    = link_to 'Profile', public_profile_url(user)
+    = link_to user.email, public_profile_url(user)
 
 %h3 Images
 %p
