@@ -1,0 +1,6 @@
+= form_for profile, url: {action: 'update'}, html: { multipart: true } do  |f|
+
+  = render 'profile_fields', f: f
+
+  .actions
+    = f.submit

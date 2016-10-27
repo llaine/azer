@@ -1,0 +1,38 @@
+= form_tag '/offers', :method => :get  do
+  = label_tag 'Situation'
+  - if @params && @params['situation']
+    = select_tag 'situation', options_for_select(['homeless', 'place on rent', 'existing'], @params['situation'])
+  - else
+    = select_tag 'situation', options_for_select(['homeless', 'place on rent', 'existing'], 'existing')
+
+  %br
+  = label_tag 'Start date'
+  - if @params && @params['start_date']
+    = date_field_tag 'start_date', @params['start_date']
+  - else
+    = date_field_tag 'start_date'
+
+  %br
+  = label_tag 'End date'
+  - if @params && @params['end_date']
+    = date_field_tag 'end_date', @params['end_date']
+  - else
+    = date_field_tag 'end_date'
+
+  %br
+  = label_tag 'Min price'
+  - if @params && @params['min_price']
+    = number_field_tag 'min_price', @params['min_price']
+  - else
+    = number_field_tag 'min_price'
+
+  %br
+  = label_tag 'Max price'
+  - if @params && @params['max_price']
+    = number_field_tag 'max_price', @params['max_price']
+  - else
+    = number_field_tag 'max_price'
+
+
+  = submit_tag 'Search'
+  = link_to 'Clear filters'

@@ -1,0 +1,68 @@
+= form_for offer, html: { multipart: true } do  |f|
+  - if offer.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(offer.errors.count, "error")
+        prohibited this offer from being saved:
+      %ul
+        - offer.errors.full_messages.each do |message|
+          %li= message
+
+  = f.fields_for :users, offer.users do |f_user|
+    = render 'user_fields', f: f_user
+  .links
+    = link_to_add_association 'Add user', f, :users
+
+
+  = f.fields_for :images, offer.images do |f_image|
+    = render 'offers/image_fields', f: f_image
+  .links
+    = link_to_add_association 'Add image', f, :images
+
+  = f.fields_for :place , offer.place do |place_field|
+    = render 'offers/place_fields', f: place_field
+  .links
+    = link_to_add_association 'Add a place', f, :place, force_non_association_create: true
+
+  .field
+    = f.label :budget
+    = f.text_field :budget
+  .field
+    = f.label :nb_wanted_people
+    = f.number_field :nb_wanted_people
+  .field
+    = f.label :start_date
+    = f.date_select :start_date
+  .field
+    = f.label :end_date
+    = f.date_select :end_date
+  .field
+    = f.label :never_do
+    = f.text_field :never_do
+  .field
+    = f.label :dream_flatmate
+    = f.text_field :dream_flatmate
+  .field
+    = f.label :prefered_sex
+    = f.number_field :prefered_sex
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :activities
+    = f.text_field :activities
+  .field
+    = f.label :ritual
+    = f.text_field :ritual
+  .field
+    = f.label :partying
+    = f.text_field :partying
+  .field
+    = f.label :nature
+    = f.text_field :nature
+  .field
+    = f.label :situation
+    = f.select :situation, options_for_select(['homeless', 'place on rent', 'existing'], 'existing')
+
+  .actions
+    = f.submit

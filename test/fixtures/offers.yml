@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  budget: 1.5
+  nb_wanted_people: 1
+  start_date: 2016-10-24
+  end_date: 2016-10-24
+  is_mock: false
+  prefered_sex: 1
+  name: MyString
+  activities: 
+  ritual: 
+  partying: 
+  nature: MyString
+  situation: MyString
+  blocked: false
+  never_do: MyString
+  dream_flatmate: MyString
+
+two:
+  budget: 1.5
+  nb_wanted_people: 1
+  start_date: 2016-10-24
+  end_date: 2016-10-24
+  is_mock: false
+  prefered_sex: 1
+  name: MyString
+  activities: 
+  ritual: 
+  partying: 
+  nature: MyString
+  situation: MyString
+  blocked: false
+  never_do: MyString
+  dream_flatmate: MyString

@@ -1,0 +1,117 @@
+%h3 Images
+%p
+  - profile.images.each do |image|
+    %p
+      %span= image_tag image.file.url(:medium)
+      %span= image.caption
+
+%h3 Profile
+%p
+  %strong First name
+  = profile.first_name
+
+%p
+  %strong Last name
+  = profile.last_name
+
+%p
+  %strong nick name
+  = profile.nick_name
+
+%p
+  %strong Sex
+  = profile.sex
+
+%p
+  %strong Orientation
+  = profile.orientation
+
+%p
+  %strong Date of birth
+  = profile.date_of_birth
+
+%p
+  %strong More about me
+  = profile.more_about_me
+
+%p
+  %strong Languages
+  = profile.languages
+
+%p
+  %strong Is studying
+  = profile.is_studying
+
+%p
+  %strong Guilty pleasure
+  = profile.guilty_pleasure
+
+%p
+  %strong Best recipe
+  = profile.best_recipe
+
+%p
+  %strong Voluntary work
+  = profile.voluntary_work
+
+%p
+  %strong Favorite quote
+  = profile.favorite_quote
+
+%p
+  %strong Heroic thing
+  = profile.heroic_thing
+
+%p
+  %strong Happiest moment
+  = profile.happiest_moment
+
+%p
+  %strong World better place
+  = profile.world_better_place
+
+%p
+  %strong Top music
+  = profile.top_music
+
+%p
+  %strong Top movies
+  = profile.top_movies
+
+%p
+  %strong Top series
+  = profile.top_series
+
+%p
+  %strong Top books
+  = profile.top_books
+
+%p
+  %strong Top games
+  = profile.top_games
+
+%p
+  %strong Hobbies
+  = profile.hobbies
+
+%p
+  %strong Company
+  = profile.company
+
+%p
+  %strong School
+  = profile.school
+
+%p
+  %strong Social networks
+  = profile.social_networks
+
+%p
+  %strong Nationality
+  = profile.nationality
+
+%p
+  %strong Three wishes
+  = profile.three_wishes
+
+

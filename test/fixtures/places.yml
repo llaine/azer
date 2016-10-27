@@ -1,0 +1,59 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ad_id: one
+  nb_bathrooms: 1
+  nb_toilets: 1
+  internet: false
+  dishwasher: false
+  ac: false
+  parking: false
+  tv: false
+  playstation: false
+  xbox: false
+  smoking: false
+  animals: false
+  caution_price: 1.5
+  electricity_price: 1.5
+  internet_price: 1.5
+  heating_price: 1.5
+  detail: MyString
+  title: MyString
+  nb_places_availables: 1
+  property_type: MyString
+  surface: 1
+  other_stuff: MyString
+  monthly_rent_price: 1.5
+  total_price: 1.5
+  satellite: false
+  wii: false
+  other_stuff: MyString
+
+two:
+  ad_id: two
+  nb_bathrooms: 1
+  nb_toilets: 1
+  internet: false
+  dishwasher: false
+  ac: false
+  parking: false
+  tv: false
+  playstation: false
+  xbox: false
+  smoking: false
+  animals: false
+  caution_price: 1.5
+  electricity_price: 1.5
+  internet_price: 1.5
+  heating_price: 1.5
+  detail: MyString
+  title: MyString
+  nb_places_availables: 1
+  property_type: MyString
+  surface: 1
+  other_stuff: MyString
+  monthly_rent_price: 1.5
+  total_price: 1.5
+  satellite: false
+  wii: false
+  other_stuff: MyString

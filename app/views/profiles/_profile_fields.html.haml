@@ -1,0 +1,117 @@
+.nested-fields
+  = f.fields_for :images do |f_image|
+    = render 'image_fields', f: f_image
+  .links
+    = link_to_add_association 'Add image', f, :images
+
+  .field
+    = f.label :email
+    = f.email_field :email
+
+  .field
+    = f.label :sex
+    = f.number_field :sex
+
+  .field
+    = f.label :orientation
+    = f.number_field :orientation
+
+  .field
+    = f.label :date_of_birth
+    = f.date_field :date_of_birth
+
+  .field
+    = f.label :more_about_me
+    = f.text_field :more_about_me
+
+  .field
+    = f.label :languages
+    = f.text_field :languages
+
+  .field
+    = f.label :is_studying
+    = f.check_box :is_studying
+
+  .field
+    = f.label :guilty_pleasure
+    = f.text_field :guilty_pleasure
+
+  .field
+    = f.label :best_recipe
+    = f.text_field :best_recipe
+
+  .field
+    = f.label :voluntary_work
+    = f.text_field :voluntary_work
+
+  .field
+    = f.label :favorite_quote
+    = f.text_field :favorite_quote
+
+  .field
+    = f.label :heroic_thing
+    = f.text_field :heroic_thing
+
+  .field
+    = f.label :happiest_moment
+    = f.text_field :happiest_moment
+
+  .field
+    = f.label :world_better_place
+    = f.text_field :world_better_place
+
+  .field
+    = f.label :top_music
+    = f.text_field :top_music
+
+  .field
+    = f.label :top_movies
+    = f.text_field :top_movies
+
+  .field
+    = f.label :top_series
+    = f.text_field :top_series
+
+  .field
+    = f.label :top_books
+    = f.text_field :top_books
+
+  .field
+    = f.label :top_games
+    = f.text_field :top_games
+
+  .field
+    = f.label :hobbies
+    = f.text_field :hobbies
+
+  .field
+    = f.label :nick_name
+    = f.text_field :nick_name
+
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+
+  .field
+    = f.label :company
+    = f.text_field :company
+
+  .field
+    = f.label :school
+    = f.text_field :school
+
+  .field
+    = f.label :social_networks
+    = f.text_field :social_networks
+
+  .field
+    = f.label :nationality
+    = f.text_field :nationality
+
+  .field
+    = f.label :three_wishes
+    = f.text_field :three_wishes

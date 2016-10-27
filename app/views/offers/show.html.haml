@@ -1,0 +1,169 @@
+#{link_to 'Back', offers_path}
+
+%h3 Crew
+
+- @offer.users.each do |user|
+  %p
+    - if user.images.present?
+      %span= image_tag user.images.first.file.url(:thumb)
+
+    %span= user.first_name
+    %span= user.last_name
+    = link_to 'Profile', public_profile_url(user)
+
+%h3 Images
+%p
+  - @offer.images.each do |image|
+    %p
+      %span= image_tag image.file.url(:medium)
+      %span= image.caption
+
+
+- if @offer.place.present?
+  %h3 Place
+
+  %p
+    %strong Nb bathrooms
+    = @offer.place.nb_bathrooms
+
+  %p
+    %strong Nb toilets
+    = @offer.place.nb_toilets
+
+  %p
+    %strong Internet
+    = @offer.place.internet
+
+  %p
+    %strong Dishwasher
+    = @offer.place.dishwasher
+
+  %p
+    %strong Ac
+    = @offer.place.ac
+
+  %p
+    %strong Parking
+    = @offer.place.parking
+
+  %p
+    %strong Tv
+    = @offer.place.tv
+
+  %p
+    %strong Playstation
+    = @offer.place.playstation
+
+  %p
+    %strong Xbox
+    = @offer.place.xbox
+
+  %p
+    %strong Wii
+    = @offer.place.wii
+
+  %p
+    %strong Smoking
+    = @offer.place.smoking
+
+  %p
+    %strong Animals
+    = @offer.place.animals
+
+  %p
+    %strong Satellite
+    = @offer.place.satellite
+
+  %p
+    %strong Caution price
+    = @offer.place.caution_price
+
+  %p
+    %strong Electricity price
+    = @offer.place.electricity_price
+
+  %p
+    %strong Internet price
+    = @offer.place.internet_price
+
+  %p
+    %strong Heating price
+    = @offer.place.heating_price
+
+  %p
+    %strong Monthly price
+    = @offer.place.monthly_rent_price
+
+  %p
+    %strong Total price
+    = @offer.place.total_price
+
+  %p
+    %strong Detail
+    = @offer.place.detail
+
+  %p
+    %strong Title
+    = @offer.place.title
+
+  %p
+    %strong Nb place available
+    = @offer.place.nb_places_availables
+
+  %p
+    %strong Property type
+    = @offer.place.property_type
+
+  %p
+    %strong Other stuff
+    = @offer.place.other_stuff
+  %p
+    %strong Surface
+    = @offer.place.surface
+
+%h3 Offer
+%p
+  %strong Budget:
+  = @offer.budget
+%p
+  %strong Nb wanted people:
+  = @offer.nb_wanted_people
+%p
+  %strong Start date:
+  = @offer.start_date
+%p
+  %strong End date:
+  = @offer.end_date
+%p
+  %strong Is mock:
+  = @offer.is_mock
+%p
+  %strong Prefered sex:
+  = @offer.prefered_sex
+%p
+  %strong Name:
+  = @offer.name
+%p
+  %strong Activities:
+  = @offer.activities
+%p
+  %strong Ritual:
+  = @offer.ritual
+%p
+  %strong Partying:
+  = @offer.partying
+%p
+  %strong Nature:
+  = @offer.nature
+%p
+  %strong Situation:
+  = @offer.situation
+%p
+  %strong Blocked:
+  = @offer.blocked
+%p
+  %strong Never do:
+  = @offer.never_do
+%p
+  %strong Dream flatmate:
+  = @offer.dream_flatmate

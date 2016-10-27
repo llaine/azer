@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  place: one
+  simple: 1
+  double: 1
+  bunk: 1
+  sofa: 1
+  surface: 1.5
+  is_private: false
+
+two:
+  place: two
+  simple: 1
+  double: 1
+  bunk: 1
+  sofa: 1
+  surface: 1.5
+  is_private: false

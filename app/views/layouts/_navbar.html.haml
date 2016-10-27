@@ -1,0 +1,19 @@
+%ul
+  %li= link_to 'Home', root_path
+  - if signed_in?
+    %li= link_to 'Feed', offers_path
+    %li= link_to 'Create your ad', new_offer_path
+    %li= link_to current_user.email, profile_path(current_user)
+    %li= button_to 'Sign out', sign_out_path, method: :delete
+
+  - else
+    %li= link_to 'Sign in', sign_in_path
+    %li= link_to 'Sign up', sign_up_path
+    %li= link_to 'Create your ad', new_offer_path
+
+
+#flash
+  - flash.each do |key, value|
+    %div{:class => "flash"}
+      %p{:id => key}= value
+

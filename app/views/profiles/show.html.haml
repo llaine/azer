@@ -1,0 +1,6 @@
+- if signed_in?
+  = link_to 'Edit profile', edit_profile_path
+
+= render 'offers_list', offers: @profile.offers
+= render 'profile', profile: @profile
+

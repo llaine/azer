@@ -1,0 +1,22 @@
+%table
+  %thead
+    %tr
+      %th Budget
+      %th Nb wanted people
+      %th Start date
+      %th End date
+      %th Name
+      %th Situation
+      %th{:colspan => "3"}
+  %tbody
+    - offers.each do |offer|
+      %tr
+        %td= offer.budget
+        %td= offer.nb_wanted_people
+        %td= offer.start_date
+        %td= offer.end_date
+        %td= offer.name
+        %td= offer.situation
+        %td= link_to 'Show', offer
+        %td= link_to 'Edit', edit_offer_path(offer)
+        %td= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' }

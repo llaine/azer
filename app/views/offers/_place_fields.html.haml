@@ -1,0 +1,103 @@
+.nested-fields
+  .field
+    = f.label :nb_bathrooms
+    = f.number_field :nb_bathrooms
+
+  .field
+    = f.label :nb_toilets
+    = f.number_field :nb_toilets
+
+  .field
+    = f.label :internet
+    = f.check_box :internet
+
+  .field
+    = f.label :dishwasher
+    = f.check_box :dishwasher
+
+  .field
+    = f.label :ac
+    = f.check_box :ac
+
+  .field
+    = f.label :parking
+    = f.check_box :parking
+
+  .field
+    = f.label :tv
+    = f.check_box :tv
+
+  .field
+    = f.label :playstation
+    = f.check_box :playstation
+
+  .field
+    = f.label :xbox
+    = f.check_box :xbox
+
+  .field
+    = f.label :smoking
+    = f.check_box :smoking
+
+  .field
+    = f.label :animals
+    = f.check_box :animals
+
+  .field
+    = f.label :satellite
+    = f.check_box :satellite
+
+  .field
+    = f.label :wii
+    = f.check_box :wii
+
+  .field
+    = f.label :caution_price
+    = f.text_field :caution_price
+
+  .field
+    = f.label :electricity_price
+    = f.text_field :electricity_price
+
+  .field
+    = f.label :internet_price
+    = f.text_field :internet_price
+
+  .field
+    = f.label :heating_price
+    = f.text_field :heating_price
+
+  .field
+    = f.label :monthly_rent_price
+    = f.text_field :monthly_rent_price
+
+  .field
+    = f.label :total_price
+    = f.text_field :total_price
+
+  .field
+    = f.label :detail
+    = f.text_field :detail
+
+  .field
+    = f.label :title
+    = f.text_field :title
+
+  .field
+    = f.label :nb_places_availables
+    = f.number_field :nb_places_availables
+
+  .field
+    = f.label :property_type
+    = f.text_field :property_type
+
+  .field
+    = f.label :surface
+    = f.number_field :surface
+
+  .field
+    = f.label :other_stuff
+    = f.text_field :other_stuff
+
+  = link_to_remove_association 'Remove place', f
+
