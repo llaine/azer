@@ -1,12 +1,10 @@
 %p
-  %b Title:
-  = @channel.title
+  %b= @channel.title
+  %span= @channel.created_at
 
-#messages{'data-channel-room-id':"#{@channel.id}"}
-  %ul
-    - @channel.messages.each do |message|
-      %li
-        = render 'messages/message', message: message
+#messages{'data-channel-room-id':"#{@channel.id}", style:'overflow-y: scroll; height:400px;'}
+  - @channel.messages.each do |message|
+    = render 'messages/message', message: message
 
 
 = form_for @message, url: '#' do |f|

@@ -29,6 +29,8 @@ gem 'redis'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'foreman'
+
 gem 'kaminari', github: 'amatsuda/kaminari', branch: '0-17-stable'
 
 gem 'paperclip', '~> 5.0.0'

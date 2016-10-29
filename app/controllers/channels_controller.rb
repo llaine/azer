@@ -1,16 +1,18 @@
 class ChannelsController < ApplicationController
+  before_action :require_login
   before_action :set_channel, only: [:edit, :update, :destroy]
 
   # GET /channels
   # GET /channels.json
   def index
-    @channels = Channel.all
+    # Loading the channel linked to the offer of the current users
+    @channels = current_user_channels
   end
 
   # GET /channels/1
   # GET /channels/1.json
   def show
-    @channel = Channel.includes(:messages).includes(messages: :user).where(id: params[:id]).first
+    @channel = current_user_channels.includes(:messages).includes(messages: :user).where(id: params[:id]).first
     @message = Message.new
   end
 
@@ -64,9 +66,13 @@ class ChannelsController < ApplicationController
   end
 
   private
+
+    def current_user_channels
+      Channel.where(offer_id: current_user.offers.pluck(:id))
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_channel
-      @channel = Channel.find(params[:id])
+      @channel = current_user_channels.where(id: params[:id]).first
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

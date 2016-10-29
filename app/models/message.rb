@@ -8,8 +8,7 @@ class Message < ApplicationRecord
     MessageBroadcastWorker.perform_async(self.id)
   }
 
-
   def timestamp
-    created_at.strftime('%H:%M:%S %d %B %Y')
+    created_at.strftime('%m/%d/%Y - %H:%M')
   end
 end

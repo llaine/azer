@@ -4,7 +4,6 @@
   %thead
     %tr
       %th Title
-      %th User
       %th
       %th
       %th
@@ -13,10 +12,10 @@
     - @channels.each do |channel|
       %tr
         %td= channel.title
-        %td= channel.user
         %td= link_to 'Show', channel
-        %td= link_to 'Edit', edit_channel_path(channel)
-        %td= link_to 'Destroy', channel, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        - if channel.user_id == current_user.id
+          %td= link_to 'Edit', edit_channel_path(channel)
+          %td= link_to 'Destroy', channel, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 

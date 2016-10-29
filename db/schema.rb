@@ -18,8 +18,10 @@ ActiveRecord::Schema.define(version: 20161027100118) do
   create_table "channels", force: :cascade do |t|
     t.string   "title"
     t.integer  "user_id"
+    t.integer  "offer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["offer_id"], name: "index_channels_on_offer_id", using: :btree
     t.index ["user_id"], name: "index_channels_on_user_id", using: :btree
   end
 
@@ -164,6 +166,7 @@ ActiveRecord::Schema.define(version: 20161027100118) do
     t.index ["remember_token"], name: "index_users_on_remember_token", using: :btree
   end
 
+  add_foreign_key "channels", "offers"
   add_foreign_key "channels", "users"
   add_foreign_key "messages", "channels"
   add_foreign_key "messages", "users"

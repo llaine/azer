@@ -11,16 +11,14 @@ jQuery(document).on 'turbolinks:load', ->
         channel_id: messages.data('channel-room-id')
       },
       connected: ->
-        console.log('connected')
-        console.log(App.room)
         # Called when the subscription is ready for use on the server
 
       disconnected: ->
         # Called when the subscription has been terminated by the server
 
       received: (data) ->
-        console.log(data)
         messages.append data['message']
+
         messages_to_bottom()
 
       speak: (message, channel_id) ->

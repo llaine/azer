@@ -9,6 +9,18 @@
     = f.email_field :email
 
   .field
+    = f.label :nick_name
+    = f.text_field :nick_name
+
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+
+  .field
     = f.label :sex
     = f.number_field :sex
 
@@ -83,18 +95,6 @@
   .field
     = f.label :hobbies
     = f.text_field :hobbies
-
-  .field
-    = f.label :nick_name
-    = f.text_field :nick_name
-
-  .field
-    = f.label :first_name
-    = f.text_field :first_name
-
-  .field
-    = f.label :last_name
-    = f.text_field :last_name
 
   .field
     = f.label :company

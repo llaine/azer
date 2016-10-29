@@ -10,7 +10,7 @@ class OffersController < ApplicationController
       @offers = SearchHelper.new(search_params).search
       @params = search_params
     else
-      @offers = Offer.all
+      @offers = Offer.where(situation:'homeless').all
     end
   end
 
@@ -37,9 +37,10 @@ class OffersController < ApplicationController
       @offer.users << current_user
       respond_to do |format|
         if @offer.save
-          @offer.users.each do |u|
-            ClearanceMailer.change_password(u).deliver_later
-          end
+
+          # @offer.users.each do |u|
+          #   ClearanceMailer.change_password(u).deliver_later
+          # end
 
           format.html { redirect_to @offer, notice: 'Offer was successfully created.' }
           format.json { render :show, status: :created, location: @offer }

@@ -7,12 +7,16 @@ class SearchHelper
   end
 
   def search
-    @offers = Offer.where(blocked:false).where(situation: params['situation'])
+    situation
     budget
     start_end_date
   end
 
   private
+
+  def situation
+    @offers = Offer.where(situation: params['situation'])
+  end
 
   def budget
     case
@@ -38,5 +42,9 @@ class SearchHelper
       else
         @offers
     end
+  end
+
+  def order_by
+    @offers.group('id, created_at').order('created_at DESC')
   end
 end

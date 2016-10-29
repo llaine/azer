@@ -3,7 +3,7 @@ class MessageBroadcastWorker
 
   def perform(message_id)
     message = Message.where(id: message_id).first
-    ActionCable.server.broadcast "room_#{message.channel_id}_channel:", message: render_message(message)
+    ActionCable.server.broadcast "room_#{message.channel_id}_channel", message: render_message(message)
   end
 
   private
