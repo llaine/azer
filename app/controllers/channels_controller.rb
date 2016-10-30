@@ -12,7 +12,13 @@ class ChannelsController < ApplicationController
   # GET /channels/1
   # GET /channels/1.json
   def show
-    @channel = current_user_channels.includes(:messages).includes(messages: :user).where(id: params[:id]).first
+    @channel = current_user_channels
+                   .includes(:messages)
+                   .includes(offer: :users)
+                   .includes(messages: :user)
+                   .where(id: params[:id])
+                   .first
+
     @message = Message.new
   end
 

@@ -2,6 +2,16 @@
   %b= @channel.title
   %span= @channel.created_at
 
+%p
+  Conversation for
+  = link_to @channel.offer.name, @channel.offer
+  with
+  - @channel.offer.users.map do |u|
+    - if u.id == current_user.id
+      %span Me
+    - else
+      = link_to u.email, public_profile_url(u)
+
 #messages{'data-channel-room-id':"#{@channel.id}", style:'overflow-y: scroll; height:400px;'}
   - @channel.messages.each do |message|
     = render 'messages/message', message: message
