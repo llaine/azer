@@ -10,9 +10,12 @@
 
 - @offer.users.each do |user|
   %p
-    - if user.images.present?
-      %span= image_tag user.images.first.file.url(:thumb)
-    = link_to user.email, public_profile_url(user)
+    - if user.id == current_user.id
+      Me
+    - else
+      - if user.images.present?
+        %span= image_tag user.images.first.file.url(:thumb)
+      = link_to user.email, public_profile_url(user)
 
 %h3 Images
 %p
