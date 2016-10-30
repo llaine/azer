@@ -1,11 +1,16 @@
 %h3 Images
 %p
-  - profile.images.each do |image|
-    %p
-      %span= image_tag image.file.url(:medium)
-      %span= image.caption
+  - if profile.images.present?
+    - profile.images.each do |image|
+      %p
+        %span= image_tag image.file.url(:medium)
+        %span= image.caption
 
 %h3 Profile
+%p
+  %strong email
+  = profile.email
+
 %p
   %strong First name
   = profile.first_name

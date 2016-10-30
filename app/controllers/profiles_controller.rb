@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit]
 
   def public
-    @profile = User.where(id: params[:id]).joins(:images).first
+    @profile = User.where(id: params[:id]).includes(:images).first
   end
 
   def show
