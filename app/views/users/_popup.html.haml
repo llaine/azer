@@ -1,0 +1,59 @@
+.app_overlay__container
+  .a_ovrl_cnt__login_register
+    .a_ovrl_cnt__login_register__floating
+      .switch_button_cpnt.switch_button_cpnt--right
+        .switch_button_cpnt__left
+          = link_to 'Login', sign_in_path
+        .switch_button_cpnt__right
+          = link_to 'Register', sign_up_path
+      = link_to '', root_path, class: 'icon i_cross close_icon'
+      .grid
+        .row.top
+          %img.a_ovrl_cnt__login_register__logo{:alt => "Nice to Mate You - Logo", :src => "data:image/png;base64,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"}/
+        .register_panel
+          = form_for @user do |f|
+            - flash.each do |key, value|
+              %div{:class => "flash"}
+                %p{:id => key}= value
+            .as_row
+              %span Hi, my name is
+              .input_txt.input_txt_alone.input_txt--focus
+                = f.text_field :first_name, autofocus: true, placeholder: 'Michael *'
+                = f.label :first_name
+              .input_txt.input_txt_alone.input_txt--focus
+                = f.text_field :last_name, placeholder: 'Jackson *'
+                = f.label :last_name
+            .as_row
+              %span But, my friends call me...
+              .input_txt.input_txt_alone.input_txt--focus
+                = f.text_field :nick_name, placeholder: 'MJ *'
+                = f.label :nick_name
+            .as_row
+              %span Last time I checked, I was
+              .input_select.input_select--register
+                = select_tag :sex, options_for_select([['Boy', 1], ['Girl', 2], ['Non Binary', 3]])
+            .as_row
+              %span I was born on the
+              .input_txt.input_txt_alone.input_txt--focus
+                = f.date_select :date_of_birth
+                = f.label :date_of_birth
+            .as_row
+              %span You can reach me at
+              .input_txt.input_txt_alone.input_txt--focus
+                = f.email_field :email, placeholder: 'Email'
+                = f.label :email
+            .as_row
+              %span My super password is
+              .input_txt.input_txt_alone.input_txt--focus
+                = f.password_field :password, autocomplete: "off"
+                %em 6 characters minimum
+                = f.label :password
+            .as_row
+              %p.legal
+                By registering, I agree with
+                %a{:href => "/terms", :target => "_blank"} the terms and conditions
+            .as_row
+              %button.btn.default_button_cpnt.btn__plain_login_register{:type => "submit"}
+                Register
+            .as_row
+              %p.engagement What happens in the community, stays in the community. We will never sell user data to a third party.

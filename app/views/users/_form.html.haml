@@ -1,6 +1,37 @@
-.text-field
-  = form.label :email
-  = form.text_field :email, type: 'email'
-.password-field
-  = form.label :password
-  = form.password_field :password
+.as_row
+  %span Hi, my name is
+  .input_txt.input_txt_alone.input_txt--focus
+    = f.text_field :first_name, autofocus: true, placeholder: 'Michael *'
+    = f.label :first_name
+  .input_txt.input_txt_alone.input_txt--focus
+    = f.text_field :last_name, placeholder: 'Jackson *'
+    = f.label :last_name
+  .as_row
+    %span But, my friends call me...
+    .input_txt.input_txt_alone.input_txt--focus
+      = f.text_field :nick_name, placeholder: 'MJ *'
+      = f.label :nick_name
+  .as_row
+    %span Last time I checked, I was
+    .input_select.input_select--register
+      = select_tag :sex, options_for_select([['Boy', 1], ['Girl', 2], ['Non Binary', 3]])
+  .as_row
+    %span I was born on the
+    .input_txt.input_txt_alone.input_txt--focus
+      = f.date_select :date_of_birth
+      = f.label :date_of_birth
+  .as_row
+    %span You can reach me at
+    .input_txt.input_txt_alone.input_txt--focus
+      = f.email_field :email, placeholder: 'Email'
+      = f.label :email
+  .as_row
+    %span My super password is
+    .input_txt.input_txt_alone.input_txt--focus
+      = f.password_field :password, autocomplete: "off"
+      %em 6 characters minimum
+      = f.label :password
+  .as_row
+    %button.btn.default_button_cpnt.btn__plain_login_register{:type => "submit"}
+      Register
+

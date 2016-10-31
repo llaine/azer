@@ -1,13 +1,7 @@
 = form_for :session, url: session_path do |form|
-  .text-field
-    = form.label :email
-    = form.text_field :email, type: 'email'
-  .password-field
-    = form.label :password
-    = form.password_field :password
-  .submit-field
-    = form.submit
-  .other-links
-    - if Clearance.configuration.allow_sign_up?
-      = link_to t(".sign_up"), sign_up_path
-    = link_to t(".forgot_password"), new_password_path
+  .input_txt.input_txt--center
+    = form.text_field :email, type: 'email', autofocus: true, placeholder: 'Email'
+  .input_txt.input_txt--center
+    = form.password_field :password, autocomplete: "off", placeholder: 'Password'
+  %button.btn.default_button_cpnt.btn__plain_login_register{:type => "submit"}
+    Login
