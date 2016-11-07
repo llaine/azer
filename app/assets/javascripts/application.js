@@ -15,4 +15,7 @@
 //= require turbolinks
 //= require cable
 //= require cocoon
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .

@@ -41,6 +41,7 @@ gem 'clearance'
 
 gem 'sidekiq'
 
+gem 'react-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
