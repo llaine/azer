@@ -1,0 +1,24 @@
+.feed_nav_bar
+  .grid.grid_wrapper
+    .row
+      .all-16.feed_nav_bar__container
+        .feed_nav_bar__col
+          %span.small.filters
+            %i.icon.i_plus
+            %span Search
+        .feed_nav_bar__col
+          = link_to offers_path(situation:'homeless'), class:'active' do
+            %i.icon.i_homeless
+            %span Homeless
+        .feed_nav_bar__col
+          = link_to offers_path(situation:'existing') do
+            %i.icon.i_crew
+            %span Existing Flatshares
+        .feed_nav_bar__col
+          = link_to offers_path(situation:'place') do
+            %i.icon.i_place_on_rent
+            %span Places to rent
+        .feed_nav_bar__col
+          %span.small.help
+            %i.icon.i_plus
+            %span Help
