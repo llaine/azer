@@ -1,27 +1,3 @@
--#%h1 Ads
--#
--#= render 'search/form_search'
--#
--#%table
--#  %thead
--#    %tr
--#      %th Budget
--#      %th Nb wanted people
--#      %th Start date
--#      %th End date
--#      %th Name
--#      %th Situation
--#      %th{:colspan => "1"}
--#  %tbody
--#    - @offers.each do |offer|
--#      %tr
--#        %td= offer.budget
--#        %td= offer.nb_wanted_people
--#        %td= offer.start_date
--#        %td= offer.end_date
--#        %td= offer.name
--#        %td= offer.situation
--#        %td= link_to 'Show', offer
 .feed_layer
   = render 'offers/feed_navbar'
   .feed_layer__content

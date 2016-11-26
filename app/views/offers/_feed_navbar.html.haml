@@ -7,15 +7,15 @@
             %i.icon.i_plus
             %span Search
         .feed_nav_bar__col
-          = link_to offers_path(situation:'homeless'), class:'active' do
+          = link_to offers_path(situation:'homeless'), class: @params['situation'] == 'homeless' ? 'active' : nil do
             %i.icon.i_homeless
             %span Homeless
         .feed_nav_bar__col
-          = link_to offers_path(situation:'existing') do
+          = link_to offers_path(situation:'existing'), class: @params['situation'] == 'existing' ? 'active' : nil do
             %i.icon.i_crew
             %span Existing Flatshares
         .feed_nav_bar__col
-          = link_to offers_path(situation:'place') do
+          = link_to offers_path(situation:'place'), class: @params['situation'] == 'place' ? 'active' : nil do
             %i.icon.i_place_on_rent
             %span Places to rent
         .feed_nav_bar__col
